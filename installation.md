@@ -1,5 +1,5 @@
 # 安装文档
-本文档包含了如何安装PaddleGAN以及相关依赖，更多产品简介请参考[ReadMe文档](./README.md)。
+本文档包含了如何安装PaddleGAN以及相关依赖，更多产品简介请参考[README](./README.md)。
 
 ## 环境依赖
 - PaddlePaddle >= 2.0.0
@@ -70,3 +70,4 @@ conda install x264=='1!152.20180717' ffmpeg=4.0.2 -c conda-forge
 ```
 python -m pip install visualdl -i https://mirror.baidu.com/pypi/simple
 ```
+*注意：VisualDL目前只维护Python3以上的安装版本
