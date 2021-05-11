@@ -6,9 +6,9 @@ PaddleGAN提供一系列影像修复能力，包括**图像/视频上色、图�
 
 ## 目录
 * 视频修复
-  * 上色
-  * 超分
-  * 补帧
+  * [上色](#视频上色)
+  * [超分](#视频分辨率提升)
+  * [补帧](#视频补帧)
 
 * 照片修复
   * 上色
@@ -46,6 +46,7 @@ from ppgan.apps import DeOldifyPredictor
 deoldify = DeOldifyPredictor()
 deoldify.run("/home/aistudio/Peking_input360p_clip6_5s.mp4") #原视频所在路径
 ```
+*`run`接口为图片/视频通用接口，由于这里对象是视频，可以使用`run_video`的接口
 
 **2. 命令行预测**
 
@@ -228,3 +229,34 @@ paddle.disable_static()
                                --process_order DAIN \
                                --output output_dir #成品视频所在的路径
 ```
+## 图片修复
+
+### 图片上色
+针对图片上色，PaddleGAN提供了DeOldify模型。
+
+#### 1. 上色模型DeOldifyPredictor
+
+[完整API接口使用说明]()
+
+#### 使用方式
+**1. API预测**
+
+```
+from ppgan.apps import DeOldifyPredictor
+deoldify = DeOldifyPredictor()
+deoldify.run("/home/aistudio/先烈.jpg") #原视频所在路径
+```
+*`run`接口为图片/视频通用接口，由于这里对象是图片，可以使用`run_image`的接口
+
+**2. 命令行预测**
+
+```
+!python applications/tools/video-enhance.py --input /home/aistudio/Peking_input360p_clip6_5s.mp4 \ #原视频路径
+                               --process_order DeOldify \ #对原视频处理的顺序
+                               --output output_dir #成品视频所在的路径
+```
+
+
+
+### 图片超分
+针对图片分辨率提升，PaddleGAN提供了
