@@ -23,13 +23,13 @@ python tools/video-enhance.py --input you_video_path.mp4 --process_order DAIN De
 
 ## 目录
 * 视频修复
-  * [上色](#视频上色)
-  * [超分](#视频分辨率提升)
-  * [补帧](#视频补帧)
+  * [视频上色](#视频上色)
+  * [视频分辨率提升](#视频分辨率提升)
+  * [视频流畅度提升](#视频补帧)
 
 * 照片修复
-  * [上色](#图片上色)
-  * [超分](#图片超分)
+  * [图片上色](#图片上色)
+  * [图片分辨率提升](#图片超分)
 
 * [在线体验](#在线体验)
   * [老北京视频修复](https://aistudio.baidu.com/aistudio/projectdetail/1161285)
