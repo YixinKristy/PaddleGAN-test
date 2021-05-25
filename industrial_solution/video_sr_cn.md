@@ -1,6 +1,6 @@
 # 视频分辨率提升
 
-针对视频超分，PaddleGAN提供了两种模型，[RealSR](#RealSR)、[ESRGAN](#EDVR)。
+针对视频超分，PaddleGAN提供了两种模型，[RealSR](#RealSR)、[EDVR](#EDVR)。
 
 ## RealSR
 
