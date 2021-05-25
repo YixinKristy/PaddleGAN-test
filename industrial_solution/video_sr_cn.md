@@ -1,6 +1,6 @@
 # 视频分辨率提升
 
-针对视频超分，PaddleGAN提供了两种模型，[RealSR](https://github.com/PaddlePaddle/PaddleGAN/blob/develop/docs/zh_CN/apis/apps.md#ppganappsrealsrpredictor)和[EDVR](https://github.com/PaddlePaddle/PaddleGAN/blob/develop/docs/zh_CN/apis/apps.md#ppganappsedvrpredictor)。
+针对视频超分，PaddleGAN提供了两种模型，[RealSR](#RealSR)、[ESRGAN](#EDVR)。
 
 ## RealSR
 
