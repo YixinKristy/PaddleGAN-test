@@ -15,7 +15,7 @@
 ```
 ppgan.apps.RealSRPredictor(output='output', weight_path=None)
 ```
-#### 参数
+### 参数
 
 - `output (str，可选的)`: 输出的文件夹路径，默认值：`output`.
 - `weight_path (None，可选的)`: 载入的权重路径，如果没有设置，则从云端下载默认的权重到本地。默认值：`None`。
