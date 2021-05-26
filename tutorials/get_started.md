@@ -4,6 +4,8 @@ PaddleGAN是飞桨生成对抗网络（GAN）开发套件，提供多种经典�
 
 本章节将以CycleGAN模型在Cityscapes数据集上的训练预测作为示例，教大家如何快速上手使用PaddleGAN。
 
+**注意，PaddleGAN中所有的模型配置文件均可在 [./PaddleGAN/configs](https://github.com/PaddlePaddle/PaddleGAN/tree/develop/configs) 中找到。**
+
 ## 目录
 - [安装](#安装)
 - [数据准备](#数据准备)
@@ -20,6 +22,7 @@ PaddleGAN是飞桨生成对抗网络（GAN）开发套件，提供多种经典�
 关于安装配置运行环境，请参考[安装文档](./install.md)完成Paddle及PaddleGAN的安装。
 
 在本演示案例中，假设用户将PaddleGAN的代码克隆并放置在 ’/home/paddle‘ 目录中。用户执行的命令操作均在 ’/home/paddle/PaddleGAN‘ 目录下完成。
+
 
 ## 数据准备
 
@@ -46,6 +49,10 @@ python -u tools/main.py --config-file configs/cyclegan_cityscapes.yaml
 ```
 output_dir: output_dir
 ```
+<div align='center'>
+  <img src='https://user-images.githubusercontent.com/48054808/119620857-0b2ee200-be38-11eb-83c3-9c5c4c4cbedf.png' width=60%>
+</div>
+
 
 - 保存的文件夹会根据模型名字和时间戳自动生成一个新目录，目录示例如下：
 
@@ -76,11 +83,24 @@ output_dir
 
 #### 可视化训练
 
-通过在配置文件中添加参数`enable_visualdl: true`使用 **[飞桨VisualDL](https://github.com/PaddlePaddle/VisualDL)对训练过程产生的指标或生成的图像进行记录，并运行相应命令对训练过程进行实时监控：**
+[飞桨VisualDL](https://github.com/PaddlePaddle/VisualDL)是针对深度学习模型开发所打造的可视化分析工具，提供关键指标的实时趋势可视化、样本训练中间过程可视化、网络结构可视化等等，更能直观展示超参与模型效果间关系，辅助实现高效调参。
+
+以下操作请确保您已完成[VisualDL](https://github.com/PaddlePaddle/VisualDL)的安装，安装指南请见[VisualDL安装文档](https://github.com/PaddlePaddle/VisualDL/blob/develop/README_CN.md#%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F)。
+
+**通过在配置文件 cyclegan_cityscapes.yaml 中添加参数`enable_visualdl: true`使用 [飞桨VisualDL](https://github.com/PaddlePaddle/VisualDL)对训练过程产生的指标或生成的图像进行记录，并运行相应命令对训练过程进行实时监控：**
+
+<div align='center'>
+  <img src='https://user-images.githubusercontent.com/48054808/119621184-68c32e80-be38-11eb-9830-95429db787cf.png' width=60%>
+</div>
+
+如果想要自定义[飞桨VisualDL](https://github.com/PaddlePaddle/VisualDL)可视化内容，可以到 [./PaddleGAN/ppgan/engine/trainer.py](https://github.com/PaddlePaddle/PaddleGAN/blob/develop/ppgan/engine/trainer.py) 中进行修改。
+
+本地启动命令：
 
 ```
 visualdl --logdir output_dir/CycleGANModel-2020-10-29-09-21/
 ```
+更多启动方式及可视化功能使用指南请见[VisualDL使用指南](https://github.com/PaddlePaddle/VisualDL/blob/develop/docs/components/README_CN.md)。
 
 #### 恢复训练
 
