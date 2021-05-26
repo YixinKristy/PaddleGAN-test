@@ -104,12 +104,12 @@ visualdl --logdir output_dir/CycleGANModel-2020-10-29-09-21/
 
 #### 恢复训练
 
-在训练过程中默认会**保存上一个epoch的checkpoint，方便恢复训练。**
+在训练过程中默认会**保存上一个epoch的checkpoint在`output_dir`中，方便恢复训练。**
 
 ```
 python -u tools/main.py --config-file configs/cyclegan_cityscapes.yaml --resume your_checkpoint_path
 ```
-- `--resume (str)`: 用来恢复训练的checkpoint路径。
+- `--resume (str)`: 用来恢复训练的checkpoint路径（保存于上面配置文件中设置的output所在路径）。
 
 ### 2. 多卡训练
 
